@@ -2,7 +2,7 @@
 user = root
 
 [program:swoole]
-command = cd /var/www1 && php artisan swoole:http start
+command = /var/www/server.php
 user = root
 autostart = true
 autorestart = true

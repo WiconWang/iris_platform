@@ -27,6 +27,8 @@ docker build -t image_service_site_prod  -f ./Dockerfile .
 ```  
 
 
+docker run -ti -p 8007:9501 -p 8012:1215  -v /Volumes/Site/GitHub/SwooleLumen:/var/www1 -v /Volumes/Site/GitHub/SwooleLumen/Dockerfiles/etc/supervisor/conf.d:/etc/supervisor/conf.d -d  image_swoole_lumen
+
 
 ## 5. 环境构建
 
@@ -36,7 +38,7 @@ docker build -t image_service_site_prod  -f ./Dockerfile .
 1. 复制 dev.example.php 为dev.php 并配置数据库部分
 2. 创建容器  
 ``` 
-docker run -ti -p 8006:80  -v /home/service_site_prod:/var/www/  --name service_site  --net prod-net -d  image_service_site_prod
+docker run -ti -p 8007:80  -v /home/service_site_prod:/var/www/  --name service_site  --net prod-net -d  image_swoole_lumen
 ```    
 3. 进入容器： `docker exec -it service_site /bin/bash`    
 4. 启动程序：  ` `  
